@@ -59,10 +59,10 @@
     /* left: 10px;  */
     /* top: 40px; */
 
-    height: 100%;
-    width: 15%;
+    /* height: 100%;
+    /* width: 15%; */
 
-    width: 20rem;
+    /* width: 20rem; */
 
 
     /* ---- */
@@ -76,8 +76,35 @@
     z-index: 100;
 
   }
+  
 
-  .menu .foto_logotipo img {
+  /* ===== Navbar ===== */
+
+  .menu .navbar {
+
+    background-color: cadetblue;
+
+    text-align: center;
+  
+  }
+
+  .menu.close {
+
+    width: 90px;
+
+  }
+
+  .menu.close .navbar {
+
+    width: 88px;            /* <-----<< */
+
+  }
+
+  /* ___________________ */
+
+  .menu .navbar .foto_logotipo img {
+
+    /* background-color: brown; */
 
     margin: 1rem 0;
     border: 0.4rem solid transparent;
@@ -111,7 +138,15 @@
     font-size: 22px;
     cursor: pointer;
     transition: var(--tran-05);
-}
+
+  }
+
+  .menu .navbar .midia_social{
+
+    display: none;
+
+
+  }
 
   .menu .navbar a {
 
@@ -136,10 +171,7 @@
 
   }
 
-  .nav-text {
-
-    /* display: none; */
-  }
+ 
 
 
   .bx.bx-slideshow{
@@ -148,19 +180,47 @@
 
     font-size: 26px;
 
+  }
+
+  .nav-text {
+
+    /* display: none; */
+
+  }
+
+  /* ===== Navbar ===== */
+
+
+  .menu.close .foto_logotipo {
+
+    opacity: 0;                       /* <-----<< */
+
+    display: none;
+
+  }
+
+  .menu.close .navbar .midia_social {
+
+    display: flex;                       /* <-----<< */
+
+  }
+
+  .menu.close .navbar .text {
+
+    opacity: 0;                       /* <-----<< */
+
+  }
+
+  .menu.close .toggle {
+
+    transform: translateY(-50%) rotate(0deg);   /* <-----<< */
 
   }
 
 
-  .navbar {
-
-    background-color: cadetblue;
-
-    text-align: center;
-  
-  }
 
 
+/* -------------------------------------------------------------------------*/
 
   .conteudo {
     display: inline;
@@ -184,6 +244,18 @@
 
   }
 
+  .menu.close ~ .conteudo{
+
+    left: 78px;
+    height: 100vh;                            /* <-----<< */
+    width: calc(100% - 112px);
+
+    margin: 5px 5px 5px 34px;
+
+  }
+
+/* -------------------------------------------------------------------------*/
+
 
   .header {
 
@@ -200,11 +272,12 @@
 
   }
 
+
   .article {
 
     background-color: red;
 
-    height: 75%;
+    height: 80%;
 
     /* float: right; */
     /* float: left; */
@@ -236,6 +309,8 @@
     align-items: center;
 
     align-content: center;
+
+    /* overflow-y: scroll; */
 	
 
 
@@ -262,12 +337,6 @@
     
   }
   
-
-
-
-
-
-
 
   .footer {
 
