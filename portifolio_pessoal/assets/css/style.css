@@ -1,0 +1,286 @@
+
+
+
+:root{
+    --green:#27ae60;
+    --black:#444;
+    --light-color:#777;
+    --bg-color:#e6e6e6;
+    --border:.1rem solid rgba(0,0,0,.2);
+    --box-shadow:.4rem .4rem 1rem #ccc,
+                -.4rem -.4rem 1rem #fff;
+    --box-shadow-inset:.4rem .4rem 1rem #ccc inset,
+                      -.4rem -.4rem 1rem #fff inset;
+    /* ===== Colors ===== */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #695CFE;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+}
+
+
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+  }
+
+  body{
+
+    /* display: inline; */
+
+    /* position: relative; */
+    display: flex; 
+    flex-direction: row;
+  }
+
+
+
+
+  .menu {
+
+    background-color: yellow;
+
+    padding: 10px;
+
+    /* float: left; */
+
+    /* position: fixed; */
+
+    
+    /* left: 10px;  */
+    /* top: 40px; */
+
+    height: 100%;
+    width: 15%;
+
+    width: 20rem;
+
+
+    /* ---- */
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+
+    z-index: 100;
+
+  }
+
+  .menu .foto_logotipo img {
+
+    margin: 1rem 0;
+    border: 0.4rem solid transparent;
+    border-radius: 20%;
+    height: 8rem;
+    width: 8rem;
+
+    box-shadow: var(--box-shadow);
+
+
+
+  }
+
+  .menu .navbar .toggle{
+    position: absolute;
+    top: 10%;
+    right: -18px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+
+
+    background-color: var(--primary-color);
+    color: var(--sidebar-color);
+
+
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: var(--tran-05);
+}
+
+  .menu .navbar a {
+
+    /* width: 80%; */
+
+    display: block;
+    margin: 1rem 20;
+    padding: .7rem;
+   
+    border-radius: 0.7rem;
+    /* border-radius: 26%; */
+
+    /* font-size: 1.2 rem; */
+    font-size: 18px;
+
+    box-shadow: var(--box-shadow);
+    color:var(--black);
+
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+
+  }
+
+  .nav-text {
+
+    /* display: none; */
+  }
+
+
+  .bx.bx-slideshow{
+
+    margin-right: 20px;
+
+    font-size: 26px;
+
+
+  }
+
+
+  .navbar {
+
+    background-color: cadetblue;
+
+    text-align: center;
+  
+  }
+
+
+
+  .conteudo {
+    display: inline;
+
+    background-color: grey;
+    margin: 5px 5px 5px 22px;
+
+    height: 100%;
+
+    width: 100%;
+
+
+    /* ---- */
+
+    position: absolute;
+    top: 0;
+    top: 0;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 276px);
+
+  }
+
+
+  .header {
+
+    background-color: blue;
+
+    width: 100%;
+
+    height: 10%;
+
+    /* display: block; */
+    /* float: right; */
+    /* float: left; */
+
+
+  }
+
+  .article {
+
+    background-color: red;
+
+    height: 75%;
+
+    /* float: right; */
+    /* float: left; */
+
+
+
+
+        
+    /* width: 80%;
+    
+    min-height: 20%;
+    background-color: orange;
+    
+    margin: 0% 10% 0% 10%; */
+    
+    
+    
+      
+    display: flex;
+    
+    flex-direction: row;
+    
+    flex-wrap: nowrap;
+    
+    flex-flow: row wrap;
+    
+    justify-content: center;
+    
+    align-items: center;
+
+    align-content: center;
+	
+
+
+  }
+
+
+  .iten {
+	
+    width: 120px;
+    
+    min-height: 80px;
+    
+    background-color: green;
+    
+    border: solid 2px black;
+    border-radius: 10px;
+    
+    margin: 10px;
+    
+    text-align: left;
+    
+    padding: 20px 10px 20px 10px;
+  
+    
+  }
+  
+
+
+
+
+
+
+
+  .footer {
+
+    background-color: green;
+
+    /* height: 15%; */
+
+    /* float: right; */
+    /* display: block; */
+
+  }
+
+
+
+
+
