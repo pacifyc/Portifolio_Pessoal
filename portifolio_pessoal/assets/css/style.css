@@ -2,15 +2,15 @@
 
 
 :root{
-    --green:#27ae60;
-    --black:#444;
-    --light-color:#777;
+    --green:#54c2e4;
+    --black:rgb(16, 58, 112);
+    --light-color:rgba(114, 170, 243, 0.87);
     --bg-color:#e6e6e6;
-    --border:.1rem solid rgba(0,0,0,.2);
-    --box-shadow:.4rem .4rem 1rem #ccc,
-                -.4rem -.4rem 1rem #fff;
-    --box-shadow-inset:.4rem .4rem 1rem #ccc inset,
-                      -.4rem -.4rem 1rem #fff inset;
+    --border:.1rem solid rgb(35, 79, 129);
+    --box-shadow:.4rem .4rem 1rem rgba(88, 133, 51, 0.842),
+                -.4rem -.4rem 1rem rgba(9, 198, 245, 0.918);
+    --box-shadow-inset:.4rem .4rem 1rem rgb(250, 161, 202) inset,
+                      -.4rem -.4rem 1rem rgb(39, 16, 143) inset;
     /* ===== Colors ===== */
     --body-color: #E4E9F7;
     --sidebar-color: #FFF;
@@ -33,6 +33,7 @@
     text-transform: capitalize;
   }
 
+
   body{
 
     /* display: inline; */
@@ -44,10 +45,79 @@
 
 
 
+  body.active {
+    --black:#fff;
+    --light-color:#ddd;
+    --bg-color:#222;
+    --border:.1rem solid rgba(0,0,0,.4);
+    --box-shadow:.4rem .4rem 1rem #111,
+                -.4rem -.4rem 1rem #333;
+    --box-shadow-inset:.4rem .4rem 1rem #111 inset,
+                      -.4rem -.4rem 1rem #333 inset;
+  }
+
+  /* -------------------------------------------------------------------------*/
+  /*  Dois botões - Um para o menu de opções 
+  /*                outro para o tema claro ou escuro
+  /* -------------------------------------------------------------------------*/
+
+  #menu-btn{
+
+    position: fixed;
+    top: 3rem; 
+    left: 2rem;
+    z-index: 1000;
+
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+
+    border-radius: 10%;
+    font-size: 1.6rem;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    color:var(--black);
+    background: var(--bg-color);
+    display: none;
+}
+
+#menu-btn:hover{
+    color:var(--green);
+    box-shadow: var(--box-shadow-inset);
+}
+
+#theme-toggler {
+
+    position: fixed;
+    top: 3rem; 
+    right: 2rem;
+    z-index: 1000;
+
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+
+    border-radius: 10%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    color: var(--black);
+    background: var(--bg-color);
+}
+
+#theme-toggler:hover {
+    color:var(--green);
+    box-shadow: var(--box-shadow-inset);
+}
+
+/* ----------------------------------////---------------------------------------*/
+
 
   .menu {
 
-    background-color: yellow;
+    background-color: rgb(11, 7, 221);
 
     padding: 10px;
 
@@ -82,11 +152,26 @@
 
   .menu .navbar {
 
-    background-color: cadetblue;
+    height: 97%;        /* <-----<< */
+
+    background-color: rgb(172, 222, 241);
+
+
+    background: linear-gradient(to left bottom, #E0FFFF, #ADD8E6);
 
     text-align: center;
+
+    overflow-y: scroll;           /* <--- Barra de rolagem */
   
   }
+
+  .navbar::-webkit-scrollbar{
+
+    display: none;               /* <--- A Barra de rolagem deixa de ser exibida */
+
+  }
+
+/* ===== Navbar ===== O javaScript altera a exibição do menu */
 
   .menu.close {
 
@@ -96,17 +181,27 @@
 
   .menu.close .navbar {
 
-    width: 88px;            /* <-----<< */
+    width: 88px;            /* <-----<<                                                   */
 
   }
 
   /* ___________________ */
+
+  .menu .navbar .foto_logotipo {
+
+    /* margin-top: 4rem; */
+
+    padding-top: 4rem;
+
+
+  }
 
   .menu .navbar .foto_logotipo img {
 
     /* background-color: brown; */
 
     margin: 1rem 0;
+
     border: 0.4rem solid transparent;
     border-radius: 20%;
     height: 8rem;
@@ -114,28 +209,31 @@
 
     box-shadow: var(--box-shadow);
 
-
-
   }
 
+
+  
+/* ===== Botão na lateral do menu  =====  */
+
   .menu .navbar .toggle{
+
     position: absolute;
     top: 10%;
-    right: -18px;
+    right: -30px;
     transform: translateY(-50%) rotate(180deg);
-    height: 25px;
-    width: 25px;
+    height: 60px;
+    width: 30px;
 
 
     background-color: var(--primary-color);
     color: var(--sidebar-color);
 
 
-    border-radius: 50%;
+    border-radius: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 30px;
     cursor: pointer;
     transition: var(--tran-05);
 
@@ -144,7 +242,6 @@
   .menu .navbar .midia_social{
 
     display: none;
-
 
   }
 
@@ -156,14 +253,22 @@
     margin: 1rem 20;
     padding: .7rem;
    
-    border-radius: 0.7rem;
+    border-radius: 0.4rem;
     /* border-radius: 26%; */
 
     /* font-size: 1.2 rem; */
     font-size: 18px;
 
-    box-shadow: var(--box-shadow);
-    color:var(--black);
+    /* box-shadow: var(--box-shadow); */
+    /* color:var(--black); */
+
+    box-shadow:5px 4px 2px #a8afb8;
+
+
+    background: linear-gradient(to left bottom, #4a91bb, #4C84FF);    /* <------=  */
+    border: solid 2px rgb(111, 111, 126);
+
+    color: rgb(255, 255, 255);
 
     display: flex;
     align-items: center;
@@ -171,20 +276,61 @@
 
   }
 
- 
+  .menu .navbar a:hover {
+
+    /*
+
+    box-shadow: var(--box-shadow-inset);
+    color: var(--green);
+
+    transform:scale(1.1);
+	
+    transition: all .50s linear;
+    border: solid 1px rgb(1, 0, 59);
+
+    */
+    	/* background-color: #E0FFFF; */
+	color: #000000;
+
+  transition: all .50s linear;
+
+	background: linear-gradient(to left bottom, #B0E0E6, #1E90FF);    /* <------=  */
+	
+		border-top: solid 1px rgb(8, 5, 141);        /* <------=  */
+		border-left: solid 1px rgb(8, 5, 141);       /* <------=  */
+		border-bottom: solid 3px rgb(8, 5, 141);     /* <------=  */
+		border-right: solid 3px rgb(8, 5, 141);      /* <------=  */
+
+    transform:scale(1.1);
+				
+	box-shadow:5px 4px 2px #77808b;
+	
+	transition: all .05s linear;
+
+  box-shadow: 0px 0px 1em #666;
+
+    
+  transition: all .3s linear;
+	
+	cursor: pointer;
+
+    
+  }
 
 
-  .bx.bx-slideshow{
+  .bx {
 
-    margin-right: 20px;
+    /* margin: 0px 4px 0px 1px; */
 
-    font-size: 26px;
+    font-size: 20px;
 
   }
 
   .nav-text {
 
     /* display: none; */
+
+    padding-left: 20px;
 
   }
 
@@ -202,6 +348,9 @@
   .menu.close .navbar .midia_social {
 
     display: flex;                       /* <-----<< */
+    padding-top: 100px;
+    padding-bottom: 40px;
+
 
   }
 
@@ -275,7 +424,9 @@
 
   .article {
 
-    background-color: red;
+    /* background-color: rgb(68, 66, 66); */
+
+    background: linear-gradient(to left bottom, #E0FFFF, #ADD8E6);
 
     height: 80%;
 
@@ -348,6 +499,170 @@
     /* display: block; */
 
   }
+
+
+/*
+
+  @media (max-width:988px){
+
+  .menu {
+
+    width: 200px;
+
+  }
+
+
+
+
+  }
+
+  */
+  
+/* media queries  */
+
+@media (max-width:991px){
+
+  html{
+      font-size: 80%;
+  }
+
+  body{
+      padding-left: 0;
+  }
+
+
+
+
+
+
+  .menu{
+
+      left:-210%;
+      /* left: 0%; */
+
+  }
+
+  .menu.active{
+      left:0%;
+      transition: .4s linear;
+  }
+
+
+  .bx.bx-chevron-right.toggle{
+
+    opacity: 0;
+    display: none;
+  }
+
+
+  .conteudo {
+
+    position: absolute;
+
+ 
+
+    left: 0px;
+    top: 0xp;
+
+    left: 0%;
+
+    width:100%;
+
+    margin: 5px 5px 5px 0px;
+
+
+  }
+
+ /* <-----<< */
+
+  #menu-btn{
+      display: initial;
+  }
+
+  .menu.close{
+
+    /* left:-210%; */ 
+    /* left: 0%; */
+    width: 290px;
+  }
+
+  .menu.close .navbar {
+
+    width: 288px;            /* <-----<<                                                   */
+      left: 0%;
+
+  }
+
+
+
+  .menu.close .navbar .midia_social{
+
+    display: none;
+
+  }
+
+  .menu.close .foto_logotipo {
+
+    opacity: 1;                       /* <-----<< */
+
+    display: block;
+
+  }
+
+  
+  .menu.close ~ .conteudo{
+
+    left: 8px;
+    /* left: 78px; */
+    /* height: 100vh;  */                          /* <-----<< */
+    height: 100%;                            /* <-----<< */
+    width: calc(100% - 12px);
+
+    margin: 5px 5px 5px 0px;
+
+  }
+
+
+}
+
+@media (max-width:450px){
+
+  html{
+      font-size: 50%;
+  }
+
+  .menu {
+      width:100%;
+      border-right: 0;
+  }
+
+  .menu .navbar .bx {
+
+    display: none;
+  }
+
+  .conteudo {
+
+    /* left: 0%; */
+
+    /* width:100%; */
+
+    position: absolute;
+
+ 
+
+    left: 0px;
+    top: 0xp;
+
+    left: 0%;
+
+    width:100%;
+
+    margin: 5px 5px 5px 0px;
+
+  }
+
+}
 
 
 
