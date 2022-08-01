@@ -1,4 +1,9 @@
 
+const body = document.querySelector('body'),
+menu = body.querySelector('section'),
+togglex = body.querySelector(".bx-chevron-right");
+toggley = body.querySelector(".bx-chevron-left");
+
 let botao_menu = document.querySelector('#menu-btn');
 let menu_lateral = document.querySelector('.menu');
 
@@ -14,10 +19,12 @@ window.onscroll = () =>{
     menu_lateral.classList.remove('active');
 }
 
-const body = document.querySelector('body'),
-      menu = body.querySelector('section'),
-      toggle = body.querySelector(".toggle");
 
-      toggle.addEventListener("click" , () =>{
-        menu.classList.toggle("close");
-    })
+
+      togglex.addEventListener("click" , () =>{
+          menu.classList.toggle("close");
+        });
+
+        toggley.addEventListener("click" , () =>{
+            menu.classList.toggle("close");
+          });
